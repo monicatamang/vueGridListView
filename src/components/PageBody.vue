@@ -4,7 +4,7 @@
         <button @click="showGridView(isClicked)">Toggle</button>
         <!-- Adding a class binding and using the boolean variable to toggle the class on and off -->
         <article :class="{ gridView: isClicked }">
-            <!-- For every tweet in the array, give it a unique id and print the tweet, username and the date created to the DOM-->
+            <!-- For every tweet in the array, give it a unique id and print the tweet, username and the date created inside of a div tag -->
             <div v-for="tweet in tweets" :key="tweet.userId">
                 <h1>
                     {{ tweet.tweet }}
@@ -106,9 +106,9 @@
         methods: {
             // Creating a function that will flip the value of isClicked when the button is clicked
 
-            // When the button is clicked the first time, the arguement that is being passed to the function is false, the isClicked variable from the data function is re-declared as true and a "gridView" class is added to the article which changes the layout of the tweets to a grid view
+            // When the button is clicked the first time, the argument that is being passed to the function is false, the isClicked variable from the data function is re-declared as true and a "gridView" class is added to the article which changes the layout of the tweets to a grid view
 
-            // When the button is clicked again, the arguement being passed to the function is now true, the isClicked variable from the data function is re-declared as false and the "gridView" class on the article is removed which changes the layout of the tweets to its original layout, a list view
+            // When the button is clicked again, the argument being passed to the function is now true, the isClicked variable from the data function is re-declared as false and the "gridView" class on the article is removed which changes the layout of the tweets to its original layout, a list view
             showGridView: function(toggleOn) {
                 this.isClicked = !toggleOn;
             }
